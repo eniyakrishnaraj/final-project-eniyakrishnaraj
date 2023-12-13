@@ -1,5 +1,5 @@
 import unittest
-from chem_bio_util_py.translate import Translate
+from chem_bio_utils_py.translate import Translate
 
 class TestTranslate(unittest.TestCase):
   def setUp(self):

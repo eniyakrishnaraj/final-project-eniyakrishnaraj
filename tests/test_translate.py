@@ -25,7 +25,7 @@ class TestTranslate(unittest.TestCase):
   def test_invalid_nucleotide(self):  # Test a DNAA sequence with an invalid nucleotide
     invalid_nucleotide_sequence = "ATGTXATCGTAG"
     result_invalid_nucleotide = self.translator.run(invalid_nucleotide_sequence)
-    self.assertEqual(result_invalid_nucleotide, "Invalid nucleotide found in DNA sequence."
+    self.assertEqual(result_invalid_nucleotide, "Invalid nucleotide found in DNA sequence.")
 
 if __name__ == "__main__":
   unittest.main()

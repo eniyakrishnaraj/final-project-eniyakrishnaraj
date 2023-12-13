@@ -25,6 +25,13 @@ class Translate:
     # Check if sequence is empty or not divisible by 3 (to be split into codons)
     if not dnaseq or len(dnaseq) % 3 != 0:
       print("Dna sequence is not valid.")
+      return ""
+
+    # Check if the sequence contains only valid nucleotides
+    valid_nucleotides = set("ATCG")
+    if not all(nucleotide in valid_nucleotides for nucleotide in dnaseq):
+      print("Invalid nucleotide found in DNA sequence.")
+      return ""
 
     # Initializes empty string for protein sequence
     proteinseq = ""

@@ -5,7 +5,7 @@ class TestProcessMolecule(unittest.TestCase):
   def test_valid_smiles(self):  # Test a valid SMILES string
     input = "[CH4+]"
     result_inchi = "InChI=1S/CH4/h1H4/q+1"
-    result_mw = 16.05
+    result_mw = 16.043
     result_mf = "CH4"
     result = processMolecule(input)
     self.assertEqual(result_inchi, result.inchi)
@@ -20,7 +20,7 @@ class TestProcessMolecule(unittest.TestCase):
   def test_valid_inchi(self):  # Test a valid InChI string
     input = "InChI=1S/CH4/h1H4/q+1"
     result_smiles = "[CH4+]"
-    result_mw = 16.05
+    result_mw = 16.043
     result_mf = "CH4"
     result = processMolecule(input)
     self.assertEqual(result_smiles, result.smiles)

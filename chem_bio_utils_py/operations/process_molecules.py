@@ -12,7 +12,7 @@ def processMolecule(input):
   if mol is None:
     mol = Chem.MolFromSmiles(input)
   if mol is None:
-    raise ValueError("Invalid input. Not valid SMILES or InChI.")
+    return "Invalid input. Not valid SMILES or InChI."
     
   # Processes the input and returns a molecule with all the attributes
   molecule = MoleculeModel(

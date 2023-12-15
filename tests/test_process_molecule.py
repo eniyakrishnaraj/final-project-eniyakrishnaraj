@@ -3,10 +3,14 @@ from chem_bio_utils_py.operations.process_molecules import processMolecule
 
 class TestProcessMolecule(unittest.TestCase):
   def test_valid_smiles(self):  # Test a valid SMILES string
-    input = "[H-]"
-    result_inchi = "InChI=1S/H/q-1"
+    input = "[CH4+]"
+    result_inchi = "InChI=1S/CH4/h1H4/q+1"
+    result_mw = 16.05
+    result_mf = CH4
     result = processMolecule(input)
     self.assertEqual(result_inchi, result.inchi)
+    self.assertEqual(result_mw, result.molecular_weight)
+    self.assertEqual(result_mf, result.molecular_formula)
 
   def test_invalid_smiles(self):  # Test an invalid SMILES string
     invalid_smiles = "InvalidSMILES"
@@ -14,10 +18,14 @@ class TestProcessMolecule(unittest.TestCase):
     self.assertEqual(result, "Invalid input. Not valid SMILES or InChI.")
 
   def test_valid_inchi(self):  # Test a valid InChI string
-    input = "InChI=1S/H/q-1"
-    result_smiles = "[H-]"
+    input = "InChI=1S/CH4/h1H4/q+1"
+    result_smiles = "[CH4+]"
+    result_mw = 16.05
+    result_mf = CH4
     result = processMolecule(input)
     self.assertEqual(result_smiles, result.smiles)
+    self.assertEqual(result_mw, result.molecular_weight)
+    self.assertEqual(result_mf, result.molecular_formula)
 
   def test_invalid_inchi(self):  # Test an invalid InChI string
     invalid_inchi = "InvalidInChI"

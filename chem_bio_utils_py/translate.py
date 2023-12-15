@@ -20,6 +20,7 @@ class Translate:
     }
 
   def run(self, seq):
+    # Ensures sequence can be handled even if it is in lower case
     dnaseq = seq.upper()
 
     # Check if sequence is empty or not divisible by 3 (to be split into codons)

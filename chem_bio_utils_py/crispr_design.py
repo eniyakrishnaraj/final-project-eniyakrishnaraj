@@ -1,4 +1,4 @@
-from chem_bio_utils_py.models import CRISPR
+from chem_bio_utils_py.models.crispr import CRISPR
 from chem_bio_utils_py.reverse_complement import ReverseComplement
 
 class CRISPRDesign:
@@ -9,7 +9,7 @@ class CRISPRDesign:
 
   """This method is meant to initialize the CRISPR systtems. All the attributes were designed based
      on literature review (sources below). This initialization can obviously be added upon as 
-     more research is conducted on more CRISPR systems"""
+     more research is conducted on more CRISPR systems. https://star-protocols.cell.com/protocols/1707"""
   def initialize_crispr_systems(self):
     # Simple, efficient and open-source CRISPR/Cas9 strategy for multi-site genome editing in Populus tremula × alba: https://academic.oup.com/treephys/article/41/11/2216/6270869
     cas9 = CRISPR(name='Cas9', pam_sequence='NGG', spacer_length=20, for_prefix='AATGGTCTCAA', for_suffix='GCTTAGAGACCAAT', rev_prefix='CTCACTAGT', rev_suffix='TAG')

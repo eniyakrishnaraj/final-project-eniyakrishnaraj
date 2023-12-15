@@ -1,5 +1,5 @@
 from rdkit import Chem
-from rdkit.Chem import Descriptors, AllChem
+from rdkit.Chem import Descriptors, AllChem, rdMolDescriptors
 from chem_bio_utils_py.models.molecule import MoleculeModel
 
 def processMolecule(input): 
@@ -24,7 +24,7 @@ def processMolecule(input):
     inchi=Chem.MolToInchi(mol),
     smiles=Chem.MolToSmiles(mol),
     molecular_weight=Descriptors.MolWt(mol),
-    molecular_formula=molecularFormula(mol),
+    molecular_formula=rdMolDescriptors.CalcMolFormula(mol),
     fingerprint=Chem.RDKFingerprint(mol))
   return molecule
 

@@ -22,7 +22,7 @@ class DNATranscriber:
       
     transcribed_sequence = ""
 
-    for nucleotide in sequence:
+    for nucleotide in dnaseq:
       transcribed_sequence += self.transcription_table.get(nucleotide, "")
 
     return transcribed_sequence

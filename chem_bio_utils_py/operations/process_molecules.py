@@ -23,11 +23,10 @@ def processMolecule(input):
     fingerprint=Chem.RDKFingerprint(mol))
   return molecule
 
+# Returns formula of a given molecule
 def molecularFormula(molecule):
   if not molecule:
     return "Input is empty."
   elements = [atom.GetSymbol() for atom in molecule.GetAtoms()]
-  molecular_formula = ''
-  for element in sorted(elements):
-    molecular_formula += element
+  molecular_formula = ''.join(sorted(elements))
   return molecular_formula

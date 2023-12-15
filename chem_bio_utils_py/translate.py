@@ -1,5 +1,6 @@
 class Translate:
   def __init__(self):
+    self.valid_nucleotides = sett("ATCG")
     self.codon_table = {
       "TCA": "S", "TCC": "S", "TCG": "S", "TCT": "S",
       "TTC": "F", "TTT": "F", "TTA": "L", "TTG": "L",
@@ -28,8 +29,7 @@ class Translate:
       return "Dna sequence is not valid."
 
     # Check if the sequence contains only valid nucleotides
-    valid_nucleotides = set("ATCG")
-    if not all(nucleotide in valid_nucleotides for nucleotide in dnaseq):
+    if not all(nucleotide in self.valid_nucleotides for nucleotide in dnaseq):
       return "Invalid nucleotide found in DNA sequence."
 
     # Initializes empty string for protein sequence

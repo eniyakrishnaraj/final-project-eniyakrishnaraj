@@ -1,6 +1,4 @@
 import unittest
-# from chem_bio_utils_py.reverse_complement import ReverseComplement
-# from chem_bio_utils_py.models import CRISPR
 from chem_bio_utils_py.crispr_design import CRISPRDesign
 
 class TestCRISPRDesign(unittest.TestCase):

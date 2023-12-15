@@ -13,6 +13,11 @@ def processMolecule(input):
     mol = Chem.MolFromSmiles(input)
   if mol is None:
     return "Invalid input. Not valid SMILES or InChI."
+
+  # Set the valence state explicitly for each atom to suppress the unusual valence warning
+  for atom in mol.GetAtoms():
+    if atom.GetTotalValence() != atom.GetExplicitValence():
+      atom.SetFormalCharge(atom.GetTotalValence() - atom.GetExplicitValence())
     
   # Processes the input and returns a molecule with all the attributes
   molecule = MoleculeModel(

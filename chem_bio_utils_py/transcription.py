@@ -8,6 +8,8 @@ class DNATranscriber:
     }
 
   def transcribe(self, dna_seq):
+    sequence = dna_seq.upper()
+    
     if not dna_seq:
       return "DNA sequence is empty."
 
@@ -17,7 +19,7 @@ class DNATranscriber:
 
     transcribed_sequence = ""
 
-    for nucleotide in dna_seq.upper():
+    for nucleotide in sequence:
       transcribed_sequence += self.transcription_table.get(nucleotide, "")
 
     return transcribed_sequence

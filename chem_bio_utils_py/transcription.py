@@ -18,6 +18,6 @@ class DNATranscriber:
     transcribed_sequence = ""
 
     for nucleotide in dna_seq.upper():
-      transcribed_sequence.add(self.transcription_table.get(nucleotide, ""))
+      transcribed_sequence += self.transcription_table.get(nucleotide, "")
 
     return transcribed_sequence

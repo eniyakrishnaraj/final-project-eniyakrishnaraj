@@ -19,6 +19,15 @@ def processMolecule(input):
     inchi=Chem.MolToInchi(mol),
     smiles=Chem.MolToSmiles(mol),
     molecular_weight=Descriptors.MolWt(mol),
-    molecular_formula=Descriptors.MolecularFormula(mol),
+    molecular_formula=Descriptors.molecularFormula(mol),
     fingerprint=Chem.RDKFingerprint(mol))
   return molecule
+
+def molecularFormula(molecule):
+  if not molecule:
+    return "Input is empty."
+  elements = [atom.GetSymbol() for atom in molecule.getAtoms()]
+  molecular_formula = ''
+  for element in sorted(elements):
+    molecular_formula += element
+  return molecular_formula

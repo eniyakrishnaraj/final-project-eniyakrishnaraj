@@ -1,3 +1,0 @@
-name: final-project-eniyakrishnaraj
-dependencies:
-  - rdkit

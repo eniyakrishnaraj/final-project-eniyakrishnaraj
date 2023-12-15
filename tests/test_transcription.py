@@ -27,5 +27,5 @@ class TestDNATranscriber(unittest.TestCase):
     result_invalid_nucleotide = self.transcriber.transcribe(invalid_nucleotide_sequence)
     self.assertEqual(result_invalid_nucleotide, "Invalid nucleotide found in DNA sequence.")
 
-if __name__ = "__main__":
+if __name__ == "__main__":
   unittest.main()

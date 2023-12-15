@@ -14,7 +14,7 @@ class TestProcessMolecule(unittest.TestCase):
     invalid_smiles = "InvalidSMILES"
     result = processMolecule(invalid_smiles)
     self.assertIsInstance(result, str)
-    self.assertEqual(result, "Error processing input 'InvalidSMILES': Invalid input. Not SMILES or InChI.")
+    self.assertEqual(result, "Error processing input 'InvalidSMILES': Invalid input. Not valid SMILES or InChI.")
 
   def test_valid_inchi(self):  # Test a valid InChI string
     input = "InChI=1S/H/q-1"
@@ -28,7 +28,7 @@ class TestProcessMolecule(unittest.TestCase):
     invalid_inchi = "InvalidInChI"
     result = processMolecule(invalid_inchi)
     self.assertIsInstance(result, str)
-    self.assertEqual(result, "Error processing input 'InvalidInChI': Invalid input. Not SMILES or InChI.")
+    self.assertEqual(result, "Error processing input 'InvalidInChI': Invalid input. Not valid SMILES or InChI.")
 
   def test_empty_input(self):  # Test an empty string
     empty_input = ""

@@ -20,4 +20,4 @@ class DNATranscriber:
     for nucleotide in dna_seq.upper():
       transcribed_sequence.add(self.transcription_table.get(nucleotide, ""))
 
-  return transcribed_sequence
+    return transcribed_sequence

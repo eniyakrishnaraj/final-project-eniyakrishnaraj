@@ -26,7 +26,7 @@ def processMolecule(input):
 def molecularFormula(molecule):
   if not molecule:
     return "Input is empty."
-  elements = [atom.GetSymbol() for atom in molecule.getAtoms()]
+  elements = [atom.GetSymbol() for atom in molecule.GetAtoms()]
   molecular_formula = ''
   for element in sorted(elements):
     molecular_formula += element

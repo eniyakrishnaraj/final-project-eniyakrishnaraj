@@ -7,10 +7,12 @@ class TestProcessMolecule(unittest.TestCase):
     inchi = "InChI=1S/H/q-1"
     
   def test_valid_smiles(self):  # Test a valid SMILES string
-    result = processMolecule(self.smiles)
+    smiles = "[H-]"
+    inchi = "InChI=1S/H/q-1"
+    result = processMolecule(smiles)
     self.assertIsNotNone(result)
     self.assertNotIsInstance(result, str)
-    self.assertEqual(self.inchi, result.inchi)
+    self.assertEqual(inchi, result.inchi)
 
   def test_invalid_smiles(self):  # Test an invalid SMILES string
     invalid_smiles = "InvalidSMILES"
@@ -19,10 +21,12 @@ class TestProcessMolecule(unittest.TestCase):
     self.assertEqual(result, "Error processing input 'InvalidSMILES': Invalid input. Not SMILES or InChI.")
 
   def test_valid_inchi(self):  # Test a valid InChI string
-    result = processMolecule(self.inchi)
+    inchi = "InChI=1S/H/q-1"
+    smiles = "[H-]"
+    result = processMolecule(inchi)
     self.assertIsNotNone(result)
     self.assertNotIsInstance(result, str)
-    self.assertEqual(self.smiles, result.smiles)
+    self.assertEqual(smiles, result.smiles)
 
   def test_invalid_inchi(self):  # Test an invalid InChI string
     invalid_inchi = "InvalidInChI"

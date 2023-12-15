@@ -1,5 +1,5 @@
 import unittest
-from chem_bio_utils_py.reverse_complement import ReverseComplement
+from chem_bio_utils_py.operations.reverse_complement import ReverseComplement
 
 class TestReverseComplement(unittest.TestCase):
   def setUp(self):

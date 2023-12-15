@@ -7,12 +7,12 @@ class DNATranscriber:
       "G": "C"
     }
 
-  def transcribe(self, dna_seq):
+  def transcribe(self, seq):
     # Ensures sequence can be handled even if it is in lower case
-    sequence = dna_seq.upper()
+    dnaseq = seq.upper()
 
     # Check if sequence is empty
-    if not dna_seq:
+    if not dnaseq:
       return "DNA sequence is empty."
 
     # Check if the sequence contains only valid nucleotides

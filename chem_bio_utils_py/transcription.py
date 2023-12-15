@@ -1,5 +1,6 @@
 class DNATranscriber:
   def __init__(self):
+    self.valid_nucleotides = set("ATCG")
     self.transcription_table = {
       "A": "U",
       "T": "A",
@@ -16,8 +17,7 @@ class DNATranscriber:
       return "DNA sequence is empty."
 
     # Check if the sequence contains only valid nucleotides
-    valid_nucleotides = set("ATCG")
-    if not all(nucleotide in valid_nucleotides for nucleotide in dnaseq):
+    if not all(nucleotide in self.valid_nucleotides for nucleotide in dnaseq):
       return "Invalid nucleotide found in DNA sequence."
       
     transcribed_sequence = ""

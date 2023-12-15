@@ -3,7 +3,7 @@ from chem_bio_utils_py.reverse_complement import ReverseComplement
 
 class CRISPRDesign:
   def __init__(self):
-    self.valid_crispr_systems = self.initialize.crispr_systems()
+    self.valid_crispr_systems = self.initialize_crispr_systems()
     self.valid_nucleotides = set("ATCGU")
     self.revcomp = ReverseComplement()
 

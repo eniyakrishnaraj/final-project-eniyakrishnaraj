@@ -19,7 +19,7 @@ def processMolecule(input):
     inchi=Chem.MolToInchi(mol),
     smiles=Chem.MolToSmiles(mol),
     molecular_weight=Descriptors.MolWt(mol),
-    molecular_formula=Descriptors.molecularFormula(mol),
+    molecular_formula=molecularFormula(mol),
     fingerprint=Chem.RDKFingerprint(mol))
   return molecule
 

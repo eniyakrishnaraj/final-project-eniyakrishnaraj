@@ -1,5 +1,5 @@
 import unittest
-from chem_bio_utils_py.transcription import DNATranscriber
+from chem_bio_utils_py.operations.transcription import DNATranscriber
 
 class TestDNATranscriber(unittest.TestCase):
   def setUp(self):

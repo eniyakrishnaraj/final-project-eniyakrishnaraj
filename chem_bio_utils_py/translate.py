@@ -1,6 +1,6 @@
 class Translate:
   def __init__(self):
-    self.valid_nucleotides = sett("ATCG")
+    self.valid_nucleotides = set("ATCG")
     self.codon_table = {
       "TCA": "S", "TCC": "S", "TCG": "S", "TCT": "S",
       "TTC": "F", "TTT": "F", "TTA": "L", "TTG": "L",

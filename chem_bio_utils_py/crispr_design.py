@@ -34,7 +34,7 @@ class CRISPRDesign:
 
     # Check if the length of the cds is long enough based on the spacer length and PAM sequence
     if len(cds) < (crispr.spacer_length + len(crispr.pam_sequence)):
-      return "CDS provided is too short to contain a target site"
+      return "CDS provided is too short to contain a target site."
 
     # Check that the cds only has appropriate nucleotides
     cds = cds.upper()
@@ -53,4 +53,4 @@ class CRISPRDesign:
     for_oligo = crispr.for_prefix + spacer + crispr.for_suffix
     rev_oligo = crispr.rev_prefix + revCompSpacer + crispr.rev_suffix
 
-    return for_oligo, rev_oligo
+    return [for_oligo, rev_oligo]

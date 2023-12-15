@@ -1,4 +1,4 @@
-from chem_bio_utils_py.models.crispr import CRISPR
+from chem_bio_utils_py.models.crispr import crispr
 from chem_bio_utils_py.reverse_complement import ReverseComplement
 
 class CRISPRDesign:

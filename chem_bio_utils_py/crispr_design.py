@@ -48,7 +48,7 @@ class CRISPRDesign:
 
     # Construct the spacer
     spacer = cds[PAM_start - crispr.spacer_length:PAM_start]
-    revCompSpacer = revcomp.reverseComp(spacer)
+    revCompSpacer = self.revcomp.reverseComp(spacer)
 
     for_oligo = crispr.for_prefix + spacer + crispr.for_suffix
     rev_oligo = crispr.rev_prefix + revCompSpacer + crispr.rev_suffix

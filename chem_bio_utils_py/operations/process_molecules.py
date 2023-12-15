@@ -10,5 +10,4 @@ def processMolecule(input):  # Can take in either SMILES or InChI
     molecule = MoleculeModel(input)
     return molecule
   except ValueError as e:
-    print(f"Error processing input '{input}]: {e}")
-    return None
+    return f"Error processing input '{input}': {e}"

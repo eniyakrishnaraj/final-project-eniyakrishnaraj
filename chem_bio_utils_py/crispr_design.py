@@ -24,7 +24,7 @@ class CRISPRDesign:
 
   def designOligos(self, cds, crispr_system_name):
     # Find the CRISPR system by name
-    crispr = next((c for c in self.valid_crispr_systems if c.name == crispr_system_name), None)
+    crispr = next((c for c in self.valid_crispr_systems if c.name.lower() == crispr_system_name.lower()), None)
     if not crispr:
       return f"CRISPR system '{crispr_system_name}' not found or not supported. Only cas9, cas12a, cas12b, and caas12c are supported."
       

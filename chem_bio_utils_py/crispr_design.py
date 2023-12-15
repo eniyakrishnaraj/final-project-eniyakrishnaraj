@@ -12,7 +12,7 @@ class CRISPRDesign:
      more research is conducted on more CRISPR systems. https://star-protocols.cell.com/protocols/1707"""
   def initialize_crispr_systems(self):
     # PAM: NGG, GG for simplicity; Simple, efficient and open-source CRISPR/Cas9 strategy for multi-site genome editing in Populus tremula × alba: https://academic.oup.com/treephys/article/41/11/2216/6270869
-    cas9 = crispr(name='Cas9', pam_sequence='GG', spacer_length=20, for_prefix='AATGGTCTCAA', for_suffix='GCTTAGAGACCAAT', rev_prefix='CTCACTAGT', rev_suffix='TAG')
+    cas9 = crispr(name='Cas9', pam_sequence='GG', spacer_length=20, for_prefix='AATGGTCTCAA', for_suffix='GCTTAGAGACCAAT', rev_prefix='CTCACTAG', rev_suffix='TAG')
     # PAM: TTTV, TTT for simplicity; Repeat expansion and methylation state analysis with nanopore sequencing: https://www.biorxiv.org/content/10.1101/480285v1.full
     cas12a = crispr(name='Cas12a', pam_sequence='TTT', spacer_length=30, for_prefix='CGGCAGCC', for_suffix='GGAAAAAC', rev_prefix='TTAGCGGCTT', rev_suffix='GGCAAAAGAG')
     # PAM: TCCC; Engineering of CRISPR-Cas12b for human genome editing: https://www.nature.com/articles/s41467-018-08224-4#MOESM1
